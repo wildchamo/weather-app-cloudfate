@@ -1,95 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <section className="vh-100">
+      <div className="container py-5 h-100">
+        <div
+          className="row d-flex justify-content-center align-items-center 
+            h-100"
+        >
+          <div className="col-md-8 col-lg-6 col-xl-4">
+            <h3 className="mb-4 pb-2 fw-normal">
+              Check the weather forecast now
+            </h3>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            <div className="input-group rounded mb-3">
+              <select
+                className="form-control rounded"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                id="location-select"
+              >
+                <option value="london">London, UK</option>
+                <option value="new-york">New York, US</option>
+                <option value="los-angeles">Los Angeles, US</option>
+                <option value="berlin">Berlin, Germany</option>
+                <option value="tokyo">Tokyo, Japan</option>
+              </select>
+              <a href="#" type="button" style={{ textDecoration: "none" }}>
+                <span
+                  className="input-group-text border-0 fw-bold"
+                  id="search-addon"
+                  style={{ background: "none" }}
+                >
+                  Check!
+                </span>
+              </a>
+            </div>
+
+            <div className="card shadow-0 border">
+              <div className="card-body p-4">
+                <h4 className="mb-1 sfw-normal">New York, US</h4>
+                <p className="mb-2">
+                  Current temperature: <strong>5.42°C</strong>
+                </p>
+                <p className="mb-2">
+                  Windspeed: <strong>12kph</strong>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </section>
   );
 }
