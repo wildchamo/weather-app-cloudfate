@@ -1,7 +1,5 @@
 import getExternalWeatherData from "@/lib/get_external_weather_data";
 
-export const runtime = 'edge';
-
 const countries = [
     {
         country: "london",
