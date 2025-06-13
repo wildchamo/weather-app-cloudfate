@@ -15,24 +15,13 @@
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
-	"env": {
-		"preview": {
-			"kv_namespaces": [
-				{
-					"binding": "WEATHER_CACHE",
-					"id": "a2b1b1e25100457aa9ee0083aa3f73aa"
-				}
-			]
-		},
-		"production": {
-			"kv_namespaces": [
-				{
-					"binding": "WEATHER_CACHE",
-					"id": "937e5629b0ac444e833e32f854d2f422"
-				}
-			]
+	"kv_namespaces": [
+		{
+			"binding": "WEATHER_CACHE",
+			"id": "a2b1b1e25100457aa9ee0083aa3f73aa"
 		}
-	},
+	]
+,
 	"observability": {
 		"enabled": true
 	},

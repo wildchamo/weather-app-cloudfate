@@ -40,6 +40,8 @@ export async function GET(request: Request) {
 
     console.log("Env", env)
 
+    const cache = env.WEATHER_CACHE
+
     const request_url = new URL(request.url)
     const requested_country = request_url.searchParams.get('country')
     const country_config = countries.find(
@@ -50,10 +52,23 @@ export async function GET(request: Request) {
         return new Response('You must provide a valid country', { status: 404 })
     }
 
-    let weather_data = await getExternalWeatherData(
-        country_config.lat,
-        country_config.long
-    );
+
+    let weather_data
+
+    const cached_data = await cache.get(`location:${requested_country}`)
+
+    if (!cached_data) {
+        console.log("No cached data found")
+        weather_data = await getExternalWeatherData(
+            country_config.lat,
+            country_config.long
+        );
+
+        await cache.put(`location:${requested_country}`, JSON.stringify(weather_data), { expirationTtl: 3600 })
+    } else {
+        console.log("Cached data found")
+        weather_data = JSON.parse(cached_data)
+    }
 
 
     const response = {
