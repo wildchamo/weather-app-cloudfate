@@ -15,9 +15,6 @@
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
-	"observability": {
-		"enabled": true
-	},
 	"env": {
 		"preview": {
 			"kv_namespaces": [
@@ -35,7 +32,11 @@
 				}
 			]
 		}
-	}
+	},
+	"observability": {
+		"enabled": true
+	},
+
 	  
 	/**
 	 * Smart Placement

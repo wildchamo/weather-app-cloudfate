@@ -1,5 +1,7 @@
 import getExternalWeatherData from "@/lib/get_external_weather_data";
 
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+
 const countries = [
     {
         country: "london",
@@ -34,6 +36,10 @@ const countries = [
 ]
 
 export async function GET(request: Request) {
+    const { env } = getCloudflareContext()
+
+    console.log("Env", env)
+
     const request_url = new URL(request.url)
     const requested_country = request_url.searchParams.get('country')
     const country_config = countries.find(
