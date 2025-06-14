@@ -18,10 +18,10 @@
 	"kv_namespaces": [
 		{
 			"binding": "NEXT_INC_CACHE_KV",
-			"id": "615c3b98420941d9aa708be7a1568013"
+			"id": "937e5629b0ac444e833e32f854d2f422"
 		}
 	],
-	"account_id": "1833eb954dbbd6d461a0157fd004f807",
+	"account_id": "6211f62dedd5c8d45ddf691a89eff38a",
 
 	"observability": {
 		"enabled": true
