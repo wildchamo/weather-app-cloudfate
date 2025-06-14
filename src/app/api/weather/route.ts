@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
     console.log("Env", env)
 
-    const cache = env.WEATHER_CACHE
+    const cache = env.NEXT_INC_CACHE_KV
 
     const request_url = new URL(request.url)
     const requested_country = request_url.searchParams.get('country')
@@ -55,7 +55,7 @@ export async function GET(request: Request) {
 
     let weather_data
 
-    const cached_data = await cache.get(`location:${requested_country}`)
+    const cached_data = await cache?.get(`location:${requested_country}`)
 
     if (!cached_data) {
         console.log("No cached data found")
@@ -64,7 +64,7 @@ export async function GET(request: Request) {
             country_config.long
         );
 
-        await cache.put(`location:${requested_country}`, JSON.stringify(weather_data), { expirationTtl: 3600 })
+        await cache?.put(`location:${requested_country}`, JSON.stringify(weather_data), { expirationTtl: 3600 })
     } else {
         console.log("Cached data found")
         weather_data = JSON.parse(cached_data)

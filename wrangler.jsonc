@@ -17,11 +17,12 @@
 	},
 	"kv_namespaces": [
 		{
-			"binding": "WEATHER_CACHE",
+			"binding": "NEXT_INC_CACHE_KV",
 			"id": "a2b1b1e25100457aa9ee0083aa3f73aa"
 		}
 	]
 ,
+	"account_id": "1833eb954dbbd6d461a0157fd004f807",
 	"observability": {
 		"enabled": true
 	},
